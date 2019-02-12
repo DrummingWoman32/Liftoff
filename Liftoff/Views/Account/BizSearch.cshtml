@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Liftoff.Models.Business>
+<!--I'd need to create the nav bar so that it's available in all the pages of the app where it needs
+    to be.-->
+
+@{
+    <h1>Business Search</h1>
+}
+
+<h4>Search for businesses to pitch or businesses you've already pitched here...</h4>
+<br />
+
+<form asp-controller="Account" asp-action="BizSearch" method="get">
+
+    <div>
+        <!--<label asp-for="Search Here"></label>-->
+        <input type="text" name="text" class="search" placeholder="Search Here" />
+        <input type="submit" name="submit" class="submit" value="Search" />
+        <br />
+        <br />
+        <b>Search by: </b>@Html.RadioButton("searchBy", "name") Name
+        @Html.RadioButton("searchBy", "address_number") Building number
+        @Html.RadioButton("searchBy", "street") Street
+
+    </div>
+
+</form>
+
+<!--if no businesses match the search criteria-->
+@*@if (Model.Count() == 0)
+    {
+        <tr>
+            <td>No rows match search criteria</td>
+        </tr>
+    }*@
+
+@*else
+    {
+        @foreach (var business in Businesses)
+        {
+            <tr>
+                <td>business.name</td>
+                <br>
+                <td>address</td>
+                <br>
+                <td></td>
+            </tr>
+        }
+
+    }*@
+
+
+<!--I'd like for the search bar to kind of extend across the page as in my wireframe.-->
+<!--now, a space for the results and a scrollbar for those results when they show up-->
