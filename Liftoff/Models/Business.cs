@@ -16,5 +16,6 @@ namespace Liftoff.Models
         //there are two other columns labeled DMS and DMP, but I never understood really what they 
         //were about...another column is the $$ column, I don't know what that one was about either
         public string Fab5_notes { get; set; }
+        public int ID { get; set; }
     }
 }

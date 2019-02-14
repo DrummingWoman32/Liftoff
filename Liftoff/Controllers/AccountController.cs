@@ -22,6 +22,8 @@ namespace Liftoff.Controllers
             context = dbContext;
         }
 
+        //all models need CRUD: create, read, update, delete
+
         // GET: /<controller>/
         //[HttpGet]
         public IActionResult Index()
@@ -164,33 +166,14 @@ namespace Liftoff.Controllers
             return View(loggedInAccount);
         }
 
-        //this will be for the page where the user searches for businesses that they pitched
-        //or will pitch
-        public IActionResult BizSearch(string searchBy, string search)
+        
+
+        //change password
+        public IActionResult ForgotPassword()
         {
-            //I have no table named Businesses that holds the info of businesses yet,
-            //so it looks like I need that, obviously
-
-            /*if(searchBy == "Name")
-            {
-                return View(context.Businesses.Where(x => x.name.StartsWith(search) || search == null).ToList());
-            }
-            else if(searchBy == "Building number")
-            {
-                return View(context.Businesses.Where(x => x.address_number == search || search == null).ToList());
-            }
-            else if(searchBy == "Street")
-            {
-                return View(context.Businesses.Where(x => x.street.StartsWith(search) || search == null).ToList());
-            }
-
-            else
-            {
-                return View();
-            }*/
-
-
-            return View();
+            //okay, so here the app would help the user change his or her password, whether they forgot it or didn't...
+            
+            return View("~/Areas/Identity/Pages/Account/ForgotPassword.cshtml");
         }
 
     }

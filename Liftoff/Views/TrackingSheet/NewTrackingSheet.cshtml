@@ -1,7 +1,84 @@
-﻿@model Liftoff.Models.TrackingSheet
+﻿@model IEnumerable<Liftoff.Models.Business>
+@*@model Liftoff.ViewModels.AddTSViewModel*@
 
 <!--so a tracking sheet is basically a table. A big table, kind of.-->
 
 @{
-    <h1>New Tracking Sheet</h1>
+    Layout = "~/Views/Business/JQueryDataTableEditableLayout.cshtml";
+
 }
+
+@section head{
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function () {
+            $('#myDataTable').dataTable({
+                "bProcessing": true,
+                "bServerSide": true,
+                "sAjaxSource": 'TableData',
+                "aoColumns": [
+                    {
+                        "sName": "ID",
+                        "bSearchable": false,
+                        "bSortable": false,
+                        "bVisible": false
+                    },
+                    { "sName": "NAME" },
+                    { "sName": "ADDRESS_NUMBER" },
+                    { "sName": "STREET" }
+                        { "sName": "SPOKE_WITH" },
+                    { "sName": "DM_NAME" },
+                    { "sName": "NOT_QUALIFIED" }
+                         { "sName": "FAB5_NOTES" }
+                ]
+            }).makeEditable();
+        });
+    </script>
+
+    <script>https://www.appelsiini.net/download/jquery.jeditable.js</script>
+
+}
+
+<div id="demo">
+    <h1>New Tracking Sheet</h1>
+    <table id="myDataTable" class="display">
+        <thead>
+            <tr>
+                <th>Company name</th>
+                <th>Address Number</th>
+                <th>Street</th>
+                <th>Spoke with</th>
+                <th>DM Name</th>
+                <th>NQ</th>
+                <th>Fab 5 Notes - Who, Who, What, Where, When</th>
+            </tr>
+        </thead>
+
+        @*@if (Model.Count == 0)
+        {
+
+        }*@
+        <tbody>
+            In development...
+            @*@for (int i = 0; i < 64; i++)
+        {
+            <tr>
+                <td></td>
+            </tr>
+        }*@
+            @*foreach (var item in Model)
+            {
+             <tr id="@item.ID">
+                <td>@item.name</td>
+                <td>@item.address_number</td>
+                <td>@item.street</td>
+                <td>@item.spoke_with</td>
+                <td>@item.DM_name</td>
+                <td>@item.not_qualified</td>
+                <td>@item.Fab5_notes</td>
+            </tr>
+            }*@
+        </tbody>
+    </table>
+    <div class="add_delete_toolbar" />
+</div>
+

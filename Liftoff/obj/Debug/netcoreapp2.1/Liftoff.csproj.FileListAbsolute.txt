@@ -69,4 +69,6 @@ C:\Users\Administrator\lc101\Liftoff\Liftoff\obj\Debug\netcoreapp2.1\Razor\Areas
 C:\Users\Administrator\lc101\Liftoff\Liftoff\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\_ViewImports.g.cshtml.cs
 C:\Users\Administrator\lc101\Liftoff\Liftoff\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\_ViewStart.g.cshtml.cs
 C:\Users\Administrator\lc101\Liftoff\Liftoff\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LoginPartial.g.cshtml.cs
-C:\Users\Administrator\lc101\Liftoff\Liftoff\obj\Debug\netcoreapp2.1\Razor\Views\Account\BizSearch.g.cshtml.cs
+C:\Users\Administrator\lc101\Liftoff\Liftoff\obj\Debug\netcoreapp2.1\Razor\Views\Business\JQueryDataTableEditableLayout.g.cshtml.cs
+C:\Users\Administrator\lc101\Liftoff\Liftoff\obj\Debug\netcoreapp2.1\Razor\Views\TrackingSheet\newTrackingSheet.g.cshtml.cs
+C:\Users\Administrator\lc101\Liftoff\Liftoff\obj\Debug\netcoreapp2.1\Razor\Views\Business\BizSearch.g.cshtml.cs
