@@ -4,6 +4,7 @@ using Liftoff.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Http;
 //using System.Web.SessionState;
 using System.Web;
 //using System.Web.UI.WebControls;
@@ -42,18 +43,7 @@ namespace Liftoff.Controllers
         [HttpPost]
         public IActionResult Index(LoginViewModel loginViewModel)
         {
-            //AccountModel am = new AccountModel();
-
-            /*if ((string.IsNullOrEmpty(loginViewModel.Username) && string.IsNullOrEmpty(loginViewModel.Password))
-                || (!string.IsNullOrEmpty(loginViewModel.Username) && string.IsNullOrEmpty(loginViewModel.Password)
-                || (string.IsNullOrEmpty(loginViewModel.Username) && (!string.IsNullOrEmpty(loginViewModel.Password)))))*/
-
-            /*if (string.IsNullOrEmpty(avm.Account.username) || string.IsNullOrEmpty(avm.Account.password)
-                || am.login(avm.Account.username, avm.Account.password) == null)*/
-
-            /*if (string.IsNullOrEmpty(loginViewModel.Username) || string.IsNullOrEmpty(loginViewModel.Password)
-                || am.login(loginViewModel.Username, loginViewModel.Password) == null)*/
-
+            
             if (string.IsNullOrEmpty(loginViewModel.Username) || string.IsNullOrEmpty(loginViewModel.Password))
             {
                 return View(loginViewModel);
@@ -78,22 +68,18 @@ namespace Liftoff.Controllers
 
                 else
                 {
-                    /*if (HttpContext.Current == null || HttpContext.Current.Session == null ||
-                        HttpContext.Current.Session["ID"] == null)*/
-                        //Session["ID"] = accountDetails.ID;
-                        //HttpContext.Current.Session["accountID"] = accountDetails.ID;
+                   
+                    //write to the session
+                    HttpContext.Session.SetString("accountID", accountDetails.ID.ToString());
 
-                        //string str = HttpContext.Current.Session["accountID"].ToString();
-                        //return RedirectToAction("AccountHomePage", "Account");
+                    string strAccountID = HttpContext.Session.GetString("accountID");
+                    //ID would be the ID of the account that is now logged in
 
-                    Account loggedInAccount = new Account
-                    {
-                        username = loginViewModel.Username,
-                        password = loginViewModel.Password
+                    //return Redirect("/Account/AccountHomePage/" + strAccountID);
 
-                    };
-
-                    return Redirect("/Account/AccountHomePage/" + loggedInAccount.ID);
+                    return RedirectToAction("AccountHomePage", accountDetails);
+                    
+                  
                 }
 
 
@@ -160,6 +146,8 @@ namespace Liftoff.Controllers
             return View();
         }
 
+
+
         //this is for user page when user first logs in or registers
         public IActionResult AccountHomePage(Account loggedInAccount)
         {
@@ -174,6 +162,17 @@ namespace Liftoff.Controllers
             //okay, so here the app would help the user change his or her password, whether they forgot it or didn't...
             
             return View("~/Areas/Identity/Pages/Account/ForgotPassword.cshtml");
+        }
+
+        //logout
+        public IActionResult Logout()
+        {
+            //so here, I'd delete the session and then redirect the user to the login page
+            //except that the session bug is still there. Let me do whatever I can here
+
+            //Session.Remove("username");
+            return Redirect("/Account/Index");
+        
         }
 
     }

@@ -1,20 +1,26 @@
 ﻿@model Liftoff.Models.Account
-<!--<a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>-->
+<!--maybe the model username isn't showing, and neither the areaCode, because
+    I'm telling it to get that from the Account model in general rather than the
+    specific user who just logged in. Is that the problem???-->
+
+@*@model Liftoff.ViewModels.LoginViewModel*@
+
 <nav>
-    <!--<a href="/BizSearch">Biz Search</a> &nbsp; &nbsp;-->
+
     <a asp-area="" asp-controller="Business" asp-action="BizSearch">Biz Search</a>&nbsp; &nbsp;
     <a asp-area="" asp-controller="TrackingSheet" asp-action="newTrackingSheet">Create New Tracking Sheet...</a> &nbsp; &nbsp;
-    <a href="/logout">Logout</a> &nbsp; &nbsp;
+    <a asp-area="" asp-controller="Account" asp-action="Logout">Logout</a> &nbsp; &nbsp;
 </nav>
 
 @{
+   
     <h1>Welcome, @Model.username!</h1>
+
 }
 
 <h3>Your area code: @Model.areaCode</h3>
 
-<!--so then here I'd like for one most recent current tracking sheet as well as a create new tracking
-    sheet icon to be here.-->
+
 
 <br />
 <br />
