@@ -1,84 +1,72 @@
-﻿@model IEnumerable<Liftoff.Models.Business>
+﻿@*@model IEnumerable<Liftoff.Models.Business>*@
 @*@model Liftoff.ViewModels.AddTSViewModel*@
+@model Liftoff.Models.TrackingSheet
 
-<!--so a tracking sheet is basically a table. A big table, kind of.-->
 
 @{
-    Layout = "~/Views/Business/JQueryDataTableEditableLayout.cshtml";
 
+   
 }
 
-@section head{
-    <script language="javascript" type="text/javascript">
-        $(document).ready(function () {
-            $('#myDataTable').dataTable({
-                "bProcessing": true,
-                "bServerSide": true,
-                "sAjaxSource": 'TableData',
-                "aoColumns": [
-                    {
-                        "sName": "ID",
-                        "bSearchable": false,
-                        "bSortable": false,
-                        "bVisible": false
-                    },
-                    { "sName": "NAME" },
-                    { "sName": "ADDRESS_NUMBER" },
-                    { "sName": "STREET" }
-                        { "sName": "SPOKE_WITH" },
-                    { "sName": "DM_NAME" },
-                    { "sName": "NOT_QUALIFIED" }
-                         { "sName": "FAB5_NOTES" }
-                ]
-            }).makeEditable();
+
+@*@Ajax.ActionLink("Date", "newTrackingSheet", new AjaxOptions
+    {
+        HttpMethod = "POST",
+        UpdateTargetId = "trackingSheet",
+        InsertionMode = InsertionMode.Replace
+    })
+*@
+
+<script language="javascript" type="text/javascript">
+
+    $(document).ready(function () {
+
+        n = new Date();
+        y = n.getFullYear();
+        m = n.getMonth() + 1;
+        d = n.getDate();
+        document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+
+        $('#trackingSheet').editableTableWidget();
+
+        $('#trackingSheet').editableTableWidget({ editor: $('<textarea>') });
+
+        $('#trackingSheet').editableTableWidget({
+            cloneProperties: ['background', 'border', 'outline']
         });
-    </script>
 
-    <script>https://www.appelsiini.net/download/jquery.jeditable.js</script>
+        /*$('table td').on('validate', function (evt, newValue) {
+            if (....) {
+            return false; // mark cell as invalid
+        }
+    });
 
-}
+        $('table td').on('change', function (evt, newValue) {
+            // do something with the new cell value
+            if (....) {
+            return false; // reject change
+        }
+    });*/
+    });
 
-<div id="demo">
-    <h1>New Tracking Sheet</h1>
-    <table id="myDataTable" class="display">
-        <thead>
-            <tr>
-                <th>Company name</th>
-                <th>Address Number</th>
-                <th>Street</th>
-                <th>Spoke with</th>
-                <th>DM Name</th>
-                <th>NQ</th>
-                <th>Fab 5 Notes - Who, Who, What, Where, When</th>
-            </tr>
-        </thead>
+</script>
 
-        @*@if (Model.Count == 0)
-        {
+<!--this is not good practice with the font here, but just for now as I figure out how to use ajax here...-->
+<div style="font-family:Arial">
+    <p id="date"></p> 
+    <table id="trackingSheet">
+        <tr>
+            <th>Company name</th>
+            <th>Address (building #)</th>
+            <th>Street name</th>
+            <th>Spoke with</th>
+            <th>DM name</th>
+            <th>NQ</th>
+            <th>Notes (FAB 5 - Who, Who, What, Where, When)</th>
+        </tr>
 
-        }*@
-        <tbody>
-            In development...
-            @*@for (int i = 0; i < 64; i++)
-        {
-            <tr>
-                <td></td>
-            </tr>
-        }*@
-            @*foreach (var item in Model)
-            {
-             <tr id="@item.ID">
-                <td>@item.name</td>
-                <td>@item.address_number</td>
-                <td>@item.street</td>
-                <td>@item.spoke_with</td>
-                <td>@item.DM_name</td>
-                <td>@item.not_qualified</td>
-                <td>@item.Fab5_notes</td>
-            </tr>
-            }*@
-        </tbody>
     </table>
-    <div class="add_delete_toolbar" />
+
 </div>
+
 

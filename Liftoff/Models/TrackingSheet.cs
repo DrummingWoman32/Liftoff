@@ -12,7 +12,7 @@ namespace Liftoff.Models
 
         //a tracking sheet is basically a list of businesses and their info...
 
-        List<Business> businesses { get; set; }
+        //List<Business> businesses { get; set; }
 
         //public string username { get; set; }
         public int ID { get; set; }

@@ -36,7 +36,7 @@ namespace Liftoff.Controllers
         //I think I'd better create a ViewModel for the tracking sheet model
         
 
-        [HttpGet]
+        /*[HttpGet]
         public IActionResult newTrackingSheet() //create new tracking sheet
         {
             AddTSViewModel addTSViewModel = new AddTSViewModel();
@@ -48,8 +48,11 @@ namespace Liftoff.Controllers
         /*if new method, get request, form page
         if create method, form handler, post
          */
-        [HttpPost]
-        public IActionResult newTrackingSheet(AddTSViewModel addTSViewModel)
+
+        //[HttpPost]
+        //public IActionResult newTrackingSheet(AddTSViewModel addTSViewModel)
+        //public IActionResult newTrackingSheet()
+        public TrackingSheet aNewTrackingSheet()
         {
             //when the user creates a new tracking sheet, he/she needs the option of 
             //either saving the sheet or deleting it
@@ -58,7 +61,22 @@ namespace Liftoff.Controllers
             //this code below would most apply if the user wanted to save
             //the tracking sheet
 
-            List<Business> businesses = new List<Business>();
+            /*//method that will return an object 
+		    public Sample AddOb(Sample S1)
+		{
+			//creating object 
+			Sample S = new Sample();
+			//adding value of passed object in current object
+			//and adding sum in another object 
+			S.value = value + S1.value;
+			//returning object 
+			return S;
+		}
+             */
+
+
+
+            /*List<Business> businesses = new List<Business>();
 
             if (ModelState.IsValid)
             {
@@ -74,8 +92,24 @@ namespace Liftoff.Controllers
                 
             }
 
-            return View(businesses);
+            return View(businesses);*/
+
+            //would I need to return a C# object here in this method???
+
+            //return View();
+
+            TrackingSheet newTS = new TrackingSheet();
+            return newTS;
+            //return View(newTS);
         }
+
+        [HttpPost]
+        public IActionResult newTrackingSheet()
+        {
+            //return View(aNewTrackingSheet());
+            return View();
+        }
+
 
     }
 }
