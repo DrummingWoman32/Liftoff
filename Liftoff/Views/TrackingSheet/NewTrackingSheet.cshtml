@@ -4,56 +4,17 @@
 
 
 @{
+    <script src="~/js/site.js"></script>
 
-   
 }
 
 
-@*@Ajax.ActionLink("Date", "newTrackingSheet", new AjaxOptions
-    {
-        HttpMethod = "POST",
-        UpdateTargetId = "trackingSheet",
-        InsertionMode = InsertionMode.Replace
-    })
-*@
-
-<script language="javascript" type="text/javascript">
-
-    $(document).ready(function () {
-
-        n = new Date();
-        y = n.getFullYear();
-        m = n.getMonth() + 1;
-        d = n.getDate();
-        document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
-
-        $('#trackingSheet').editableTableWidget();
-
-        $('#trackingSheet').editableTableWidget({ editor: $('<textarea>') });
-
-        $('#trackingSheet').editableTableWidget({
-            cloneProperties: ['background', 'border', 'outline']
-        });
-
-        /*$('table td').on('validate', function (evt, newValue) {
-            if (....) {
-            return false; // mark cell as invalid
-        }
-    });
-
-        $('table td').on('change', function (evt, newValue) {
-            // do something with the new cell value
-            if (....) {
-            return false; // reject change
-        }
-    });*/
-    });
-
-</script>
-
 <!--this is not good practice with the font here, but just for now as I figure out how to use ajax here...-->
 <div style="font-family:Arial">
-    <p id="date"></p> 
+    <br />
+    <p id="date">Date: </p>
+    <br />
+
     <table id="trackingSheet">
         <tr>
             <th>Company name</th>
@@ -64,6 +25,7 @@
             <th>NQ</th>
             <th>Notes (FAB 5 - Who, Who, What, Where, When)</th>
         </tr>
+
 
     </table>
 

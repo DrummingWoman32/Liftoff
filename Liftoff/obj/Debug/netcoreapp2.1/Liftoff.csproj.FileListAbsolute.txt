@@ -71,4 +71,3 @@ C:\Users\Administrator\lc101\Liftoff\Liftoff\obj\Debug\netcoreapp2.1\Liftoff.Vie
 C:\Users\Administrator\lc101\Liftoff\Liftoff\obj\Debug\netcoreapp2.1\Liftoff.dll
 C:\Users\Administrator\lc101\Liftoff\Liftoff\obj\Debug\netcoreapp2.1\Liftoff.pdb
 C:\Users\Administrator\lc101\Liftoff\Liftoff\obj\Debug\netcoreapp2.1\Liftoff.csproj.CopyComplete
-C:\Users\Administrator\lc101\Liftoff\Liftoff\obj\Debug\netcoreapp2.1\Liftoff.csprojAssemblyReference.cache

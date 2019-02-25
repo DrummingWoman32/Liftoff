@@ -32,9 +32,9 @@ namespace Liftoff.Controllers
             return View(trackingSheets);
         }
 
-       
+
         //I think I'd better create a ViewModel for the tracking sheet model
-        
+
 
         /*[HttpGet]
         public IActionResult newTrackingSheet() //create new tracking sheet
@@ -49,10 +49,17 @@ namespace Liftoff.Controllers
         if create method, form handler, post
          */
 
-        //[HttpPost]
+        [HttpGet]
+        public IActionResult newTrackingSheet()
+        {
+            //return View(aNewTrackingSheet());
+            return View();
+        }
+
+        [HttpPost]
         //public IActionResult newTrackingSheet(AddTSViewModel addTSViewModel)
-        //public IActionResult newTrackingSheet()
-        public TrackingSheet aNewTrackingSheet()
+        public TrackingSheet NewTrackingSheet()
+        //public TrackingSheet aNewTrackingSheet()
         {
             //when the user creates a new tracking sheet, he/she needs the option of 
             //either saving the sheet or deleting it
@@ -103,12 +110,7 @@ namespace Liftoff.Controllers
             //return View(newTS);
         }
 
-        [HttpPost]
-        public IActionResult newTrackingSheet()
-        {
-            //return View(aNewTrackingSheet());
-            return View();
-        }
+        
 
 
     }
