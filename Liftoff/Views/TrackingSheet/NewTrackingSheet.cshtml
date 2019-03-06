@@ -4,31 +4,63 @@
 
 
 @{
-    <script src="~/js/site.js"></script>
+    
 
 }
 
 
-<!--this is not good practice with the font here, but just for now as I figure out how to use ajax here...-->
-<div style="font-family:Arial">
-    <br />
-    <p id="date">Date: </p>
-    <br />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="~/css/main.css">
+    <title>New Spreadsheet</title>
+</head>
+<body>
+    <!--<header>Milen Editable Table</header>-->
+    <!--<header>New Spreadsheet</header>-->
+    <div class="mainContainer">
+        <br />
+        <br />
+        <br />
+        <h3>New Spreadsheet</h3>
+        <br />
+        Some tips: <br />
+        <ul id="tips">
+            <li>Take a picture of this spreadsheet when you're done.</li>
+            <li>Type the date for this spreadsheet so you know when you filled this out
+            while pitching</li>
+            <li>Although the columns from company name to Fab 5 are the main ones,
+            you can add other rows and columns as needed.</li>
 
-    <table id="trackingSheet">
-        <tr>
-            <th>Company name</th>
-            <th>Address (building #)</th>
-            <th>Street name</th>
-            <th>Spoke with</th>
-            <th>DM name</th>
-            <th>NQ</th>
-            <th>Notes (FAB 5 - Who, Who, What, Where, When)</th>
-        </tr>
-
-
-    </table>
-
-</div>
-
-
+        </ul>
+        <br />
+        Date: <input type="date" name="trackingSheetDate" />
+        <div class="table">
+            <div class="row" id="buttonCont">
+                <button class="addCol">Add Column</button>
+                <button class="addRow">Add Row</button>
+            </div>
+            <div class="row" id="categories">
+                <!--I'm thinking of making the category titles bold...-->
+                <input class="col1 item" id="edge" type="text">
+                <input class="col2 item" id="cat1" type="text" value="Company name">
+                <input class="col3 item" id="cat2" type="text" value="Address (bldg #)">
+                <input class="col4 item" id="cat3" type="text" value="Street">
+                <input class="col5 item" id="cat4" type="text" value="Spoke with">
+                <input class="col6 item" id="cat5" type="text" value="DM name">
+                <input class="col7 item" id="cat6" type="text" value="NQ">
+                <input class="col8 item" id="cat7" type="text" value="Notes (Fab 5 - Who, Who, What, Where, When">
+                <!---<input class="col2 item" id="cat1" type="text" value="Category 1">
+            <input class="col3 item" id="cat2" type="text" value="Category 2">
+            <input class="col4 item" id="cat3" type="text" value="Category 3">
+            <input class="col5 item" id="cat4" type="text" value="Category 4">
+            <input class="col6 item" id="cat5" type="text" value="Category 5">-->
+            </div>
+        </div>
+    </div>
+    <script src="~/js/main.js"></script>
+</body>
+</html>

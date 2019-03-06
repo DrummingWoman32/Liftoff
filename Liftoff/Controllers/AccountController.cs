@@ -154,15 +154,53 @@ namespace Liftoff.Controllers
             return View(loggedInAccount);
         }
 
-        
 
-        //change password
         public IActionResult ForgotPassword()
         {
-            //okay, so here the app would help the user change his or her password, whether they forgot it or didn't...
-            
-            return View("~/Areas/Identity/Pages/Account/ForgotPassword.cshtml");
+            ForgotPasswordViewModel FPViewModel = new ForgotPasswordViewModel();
+
+            return View(FPViewModel);
         }
+
+        //change password
+        [HttpPost]
+        public IActionResult ForgotPassword(ForgotPasswordViewModel FPViewModel)
+        {
+            //okay, so here the app would help the user change his or her password if they forgot it...
+
+            if (string.IsNullOrEmpty(FPViewModel.Username) || string.IsNullOrEmpty(FPViewModel.NewPassword)
+               || string.IsNullOrEmpty(FPViewModel.ConfirmNewPassword))
+            {
+                return View(FPViewModel);
+            }
+
+            if (ModelState.IsValid)
+            {
+                //modify user's account with new password
+                var accountToModify = context.Accounts.Where(x => x.username == FPViewModel.Username).FirstOrDefault();
+                accountToModify.password = FPViewModel.NewPassword;
+
+                //save to the database
+                //does the database have a method or something to modify a field of a record? Let me look that up in the LC101 resources...
+
+                //context.Accounts.Add(newAccount);
+
+                context.SaveChanges();
+
+                
+                return Redirect("/Account/PasswordChanged");
+
+            }
+
+            return View(FPViewModel);
+        }
+
+
+        public IActionResult PasswordChanged()
+        {
+            return View();
+        }
+
 
         //logout
         public IActionResult Logout()

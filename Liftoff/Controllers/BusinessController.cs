@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web.Http.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -10,6 +11,7 @@ namespace Liftoff.Controllers
 {
     public class BusinessController : Controller
     {
+        [EnableCorsAttribute("https://localhost:44368", "*", "*")]
         // GET: /<controller>/
         public IActionResult Index()
         {
@@ -27,10 +29,22 @@ namespace Liftoff.Controllers
 
         //this will be for the page where the user searches for businesses that they pitched
         //or will pitch
-        public IActionResult BizSearch(string searchBy, string search)
+        [HttpGet]
+        public IActionResult BizSearch()
+        {
+            return View();
+        }
+
+        
+        [HttpPost]
+        //public IActionResult BizSearch(string searchBy, string search)
+        //[HttpGet]
+        public IActionResult BizSearch(string searchText)
         {
             //I have no table named Businesses that holds the info of businesses yet,
             //so it looks like I need that, obviously
+
+            //actually i'm implementing an api for this one
 
             /*if(searchBy == "Name")
             {
@@ -51,7 +65,7 @@ namespace Liftoff.Controllers
             }*/
 
 
-            return View();
+            return View(searchText);
         }
 
         /*public string DeleteData(int id) 
@@ -113,8 +127,8 @@ namespace Liftoff.Controllers
         }
 
         var company = new Company();
-        company.Name = name;
         company.Address = address;
+        company.Name = name;
         company.Town = town;
         companies.Add(company);
         return company.ID;

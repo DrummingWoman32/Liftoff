@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
+using System.Web.Http.Cors;
 
 namespace Liftoff
 {
@@ -76,6 +77,10 @@ namespace Liftoff
                     name: "default",
                     template: "{controller=Account}/{action=Index}/{id?}");
             });
+
+            //origin for now will just be localhost
+            EnableCorsAttribute cors = new EnableCorsAttribute("https://localhost:44368", "*", "GET, POST");
+            //app.EnableCors(cors);
         }
     }
 }
