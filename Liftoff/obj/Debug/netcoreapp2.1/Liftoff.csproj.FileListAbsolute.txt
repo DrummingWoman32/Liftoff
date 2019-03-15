@@ -5,6 +5,7 @@ C:\Users\Administrator\lc101\Liftoff\Liftoff\bin\Debug\netcoreapp2.1\Liftoff.dll
 C:\Users\Administrator\lc101\Liftoff\Liftoff\bin\Debug\netcoreapp2.1\Liftoff.pdb
 C:\Users\Administrator\lc101\Liftoff\Liftoff\bin\Debug\netcoreapp2.1\Liftoff.Views.dll
 C:\Users\Administrator\lc101\Liftoff\Liftoff\bin\Debug\netcoreapp2.1\Liftoff.Views.pdb
+C:\Users\Administrator\lc101\Liftoff\Liftoff\obj\Debug\netcoreapp2.1\Liftoff.csprojAssemblyReference.cache
 C:\Users\Administrator\lc101\Liftoff\Liftoff\obj\Debug\netcoreapp2.1\Liftoff.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\lc101\Liftoff\Liftoff\obj\Debug\netcoreapp2.1\Liftoff.RazorAssemblyInfo.cache
 C:\Users\Administrator\lc101\Liftoff\Liftoff\obj\Debug\netcoreapp2.1\Liftoff.RazorAssemblyInfo.cs

@@ -82,29 +82,7 @@ namespace Liftoff.Controllers
 		}
              */
 
-
-
-            /*List<Business> businesses = new List<Business>();
-
-            if (ModelState.IsValid)
-            {
-                TrackingSheet newTrackingSheet = new TrackingSheet
-                {
-                    date = addTSViewModel.date,
-                    //businesses = newTrackingSheet.businesses;
-                    //username = addTSViewModel.username
-                };
-
-                context.TrackingSheets.Add(newTrackingSheet);
-                context.SaveChanges();
-                
-            }
-
-            return View(businesses);*/
-
-            //would I need to return a C# object here in this method???
-
-            //return View();
+            
 
             TrackingSheet newTS = new TrackingSheet();
             return newTS;
