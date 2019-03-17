@@ -1,0 +1,20 @@
+﻿body {
+    }
+
+@media screen and (max-width: 600px) {
+    input[type=text] {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 20px;
+        border: 10px solid #ccc;
+        /*padding: 7px;
+        margin-top: 8px;
+        font-size: 18px;
+        border: none;*/
+    }
+
+    
+}
