@@ -74,7 +74,7 @@ using Liftoff.Models;
             WriteLiteral("\r\n    </div>\r\n</body>\r\n</html>-->\r\n\r\n\r\n<!DOCTYPE html>\r\n<html>\r\n");
             EndContext();
             BeginContext(247, 1305, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "73f6604a3f924027a78f0a5fb29ced87", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a2b0f9755254263b2a45b93a992f095", async() => {
                 BeginContext(253, 67, true);
                 WriteLiteral("\r\n    <title>Customization of Editable DataTable</title>\r\n    <link");
                 EndContext();
@@ -204,7 +204,7 @@ Write(RenderSection("head", required: false));
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(1554, 255, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0dfc89fbf403489ab08aa153f10a1127", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5eec12a2880f4145b5c4e944bb12b3e1", async() => {
                 BeginContext(1560, 215, true);
                 WriteLiteral("\r\n    <div id=\"container\">\r\n        <!--<a href=\"/Company/Index\">Basic Example</a>\r\n        <a href=\"/Company/Ajax\">Getting data with Ajax</a>\r\n        <a href=\"/Company/Customization\">Customization</a>-->\r\n        ");
                 EndContext();

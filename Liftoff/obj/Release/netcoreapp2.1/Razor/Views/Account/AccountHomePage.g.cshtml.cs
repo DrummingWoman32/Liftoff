@@ -58,7 +58,7 @@ using Liftoff.Models;
             WriteLiteral("\r\n\r\n<nav>\r\n\r\n    <!--<a asp-area=\"\" asp-controller=\"Business\" asp-action=\"BizSearch\">Biz Search</a>&nbsp; &nbsp;-->\r\n    ");
             EndContext();
             BeginContext(152, 108, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8d97a641d35f43f19a8b827f587b56dc", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0a31e5fe9d224402b3d7642bcc8a1f45", async() => {
                 BeginContext(228, 28, true);
                 WriteLiteral("Create New Tracking Sheet...");
                 EndContext();
@@ -84,7 +84,7 @@ using Liftoff.Models;
             WriteLiteral(" &nbsp; &nbsp;\r\n    ");
             EndContext();
             BeginContext(280, 70, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6ec46bbe0df446d9bbd7b4d526f6092f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3180f73f73634e3a818e72bde0bd496b", async() => {
                 BeginContext(340, 6, true);
                 WriteLiteral("Logout");
                 EndContext();

@@ -55,7 +55,7 @@ using Liftoff.Models;
             WriteLiteral("\r\n\r\n<h2>Your account has been created! </h2>\r\n\r\n<p>");
             EndContext();
             BeginContext(51, 71, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da3b8fbe5368486786d286a7a2deabe8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c886c24f184146f29378bb132ee2a253", async() => {
                 BeginContext(98, 20, true);
                 WriteLiteral("Return to Login page");
                 EndContext();
