@@ -58,7 +58,7 @@ using Liftoff.Models;
             WriteLiteral("\r\n<h1>Your password has been changed.</h1>\r\n\r\n<p>");
             EndContext();
             BeginContext(58, 71, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4dbc14fe190040b980f90039099c2f2e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c953b08f7cf647e5a4db61933149535b", async() => {
                 BeginContext(105, 20, true);
                 WriteLiteral("Return to Login page");
                 EndContext();
